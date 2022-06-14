@@ -1,6 +1,7 @@
-import { machineProtocolInteface } from "./Serving/Machine/type";
-import { Report, report } from "./Analytics/type";
-import { run } from "./index";
+import { DrinkType, Order } from "../Serving/order/OrderType";
+import { computeMachineCommand } from "../Serving/Command/command";
+import { getStatistics, updateStatistics } from "./analytics";
+import { DrinkStatistic, report, Report } from "./type";
 
 const initialReport: Report = {
   Chocolate: {
@@ -33,21 +34,16 @@ const initialReport: Report = {
   }
 };
 
-it("That's a test!", function () {
-  expect(1 + 1).toEqual(2);
-});
-/*
-it("run should serve drink and update statistics", function () {
-  const machineProtocoleMock: machineProtocolInteface = {
-    makeDrink: jest.fn(),
-    message: jest.fn()
-  }
+it("should return the corect updated report", function () {
 
-  run(machineProtocoleMock)
+  updateStatistics('Coffee')
+  updateStatistics('Tea')
+  updateStatistics('Coffee')
+
 
   const expected: Report = {
     ...initialReport,
-    Coffee: {
+    Coffee : {
       ...initialReport.Coffee,
       sold: 2,
       earned: {
@@ -55,15 +51,15 @@ it("run should serve drink and update statistics", function () {
         unit: 'centimes'
       }
     },
-    Chocolate : {
+    Tea : {
       ...initialReport.Coffee,
       sold: 1,
       earned: {
-        value: 50,
+        value: 40,
         unit: 'centimes'
       }
     }
   }
 
-    expect(report).toEqual(expected);
-});*/
+  expect(getStatistics()).toEqual(expected);
+});
