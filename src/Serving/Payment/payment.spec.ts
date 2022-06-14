@@ -7,7 +7,8 @@ it("should return a negative number", function () {
   const givenCommand: Order = {
     drink: 'Chocolate',
     sugar: 2,
-    stick: true
+    stick: true,
+    type: 'hot'
   }
 
   const givenCurency: Curency = {
@@ -29,7 +30,8 @@ it("should return a positive number with null amount", function () {
   const givenCommand: Order = {
     drink: 'Chocolate',
     sugar: 2,
-    stick: true
+    stick: true,
+    type: 'hot'
   }
 
   const givenCurency: Curency = {
@@ -51,7 +53,8 @@ it("should return a positive number with not null amount", function () {
   const givenCommand: Order = {
     drink: 'Chocolate',
     sugar: 2,
-    stick: true
+    stick: true,
+    type: 'hot'
   }
 
   const givenCurency: Curency = {

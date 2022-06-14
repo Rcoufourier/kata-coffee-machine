@@ -21,8 +21,8 @@ export type TemperatureCold = {
 }
 
 export type orderSugarHot = OrderWithSugar & TemperatureHot
-export type orderSugarNotHot = OrderWithoutSugar & TemperatureCold
-export type orderNoSugarHot = OrderWithSugar & TemperatureHot
+export type orderSugarNotHot = OrderWithSugar & TemperatureCold
+export type orderNoSugarHot = OrderWithoutSugar & TemperatureHot
 export type orderNoSugarNotHot = OrderWithoutSugar & TemperatureCold
 
 

@@ -1,7 +1,10 @@
+import { DrinkType } from "../order/OrderType";
 
 export interface machineProtocolInteface {
   makeDrink: (command: MachineInput) => MachineInput,
   message: (message: string) => MachineInput
+  beverageQuantityChecker:(drink: DrinkType) => Promise<boolean>;
+  notifyMissingDrink: (drink: DrinkType) => Promise<void>;
 }
 
 

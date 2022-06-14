@@ -58,7 +58,7 @@ it("should Drink maker will make one orange juice", function () {
     drink: 'Orange',
     sugar: 0,
     stick: false,
-    type: 'hot'
+    type: 'cold'
   }
 
   const actual = computeMachineCommand(givenCommand)
